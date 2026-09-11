@@ -25,6 +25,12 @@ h1{margin:0 0 8px;font-size:clamp(26px,4vw,42px)}
 @media(min-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,.035)}
 .card h2{margin:0 0 6px;font-size:20px}
+.grid>.card>h2{padding:10px 12px;border-radius:12px;margin:0 0 10px}
+.grid>.card:nth-child(1)>h2{background:#e8f3ff;color:#24547a}
+.grid>.card:nth-child(2)>h2{background:#e9f7ee;color:#28613c}
+.grid>.card:nth-child(3)>h2{background:#fff3df;color:#80551f}
+.grid>.card:nth-child(4)>h2{background:#f2ebff;color:#60448a}
+.grid>.card>h2 .badge{background:rgba(255,255,255,.72);color:inherit}
 .sub{margin:0 0 16px;color:var(--muted);font-size:13px;line-height:1.6}
 .item{display:grid;grid-template-columns:1fr;gap:8px;margin:7px 0;padding:12px;border:1px solid #f0f1f3;border-radius:14px;transition:.18s}
 .item.checked{background:var(--done-bg);border-color:var(--done-bg)}
@@ -33,11 +39,14 @@ h1{margin:0 0 8px;font-size:clamp(26px,4vw,42px)}
 .item label{cursor:pointer;line-height:1.5;font-size:17px;font-weight:600}
 .item.checked label{color:var(--done-text);font-weight:600}
 .meta{font-size:12px;color:#55705a;margin-top:4px;font-weight:500}
-.actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-.iconbtn{width:auto;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;transition:.15s}
+.actions{display:flex;gap:4px;flex-wrap:nowrap;justify-content:flex-end;align-items:center;width:100%;overflow-x:auto;scrollbar-width:none}
+.actions::-webkit-scrollbar{display:none}
+.iconbtn{width:auto;flex:0 0 auto;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:700;cursor:pointer;transition:.15s;white-space:nowrap}
 .movebtn{background:#f3f4f6;color:#4b5563;text-shadow:none;border:none;box-shadow:none}.movebtn:hover{filter:brightness(.97)}
-.deletebtn{background:var(--danger);color:#fff;border:none;border-radius:12px}.deletebtn:hover{filter:brightness(.9)}
+.deletebtn{background:var(--danger);color:#fff;border:none;border-radius:999px}.deletebtn:hover{filter:brightness(.9)}
 .iconbtn:disabled{opacity:.35;cursor:not-allowed}
+@media(max-width:520px){.card{padding:16px}.item{padding:10px}.actions{gap:3px}.iconbtn{padding:6px 7px;font-size:10px}.item label{font-size:16px}}
+@media(max-width:360px){.iconbtn{padding:6px 5px;font-size:9px}.actions{gap:2px}}
 .addbox{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}.addrow{display:flex;gap:8px}.addrow input{flex:1;min-width:0;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font-size:14px}
 .bulkbox{margin-top:10px}.bulkbox summary{cursor:pointer;color:#4b5563;font-size:13px;font-weight:700;list-style:none;user-select:none}.bulkbox summary::-webkit-details-marker{display:none}.bulkbox textarea{width:100%;min-height:110px;margin-top:10px;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;font-size:14px;line-height:1.55;resize:vertical;background:#fff;color:var(--text)}.bulkbtn{width:100%;margin-top:8px}.bulkmsg{min-height:1.4em;margin-top:7px;color:var(--muted);font-size:12px;line-height:1.5}
 button{border:none;border-radius:14px;padding:14px 18px;font-size:16px;font-weight:700;cursor:pointer}
